@@ -4,17 +4,17 @@ def is_even( x ):
 
 	if x % 2 == 0:
 		
-		return "True"
+		return "Even"
 		
 	if x % 2 != 0:
 		
-		return "False"
+		return "Odd"
 		
 # 1 --------------------------------------------------------------------------------------
 
 def digit_number( x ):
 		
-	return len( str( x ) )
+	return str( len( str( x ) ) )
 
 # 2 --------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ def add_digits( x ):
 		
 		baseNumber += int( digit )
 		
-	return baseNumber
+	return str( baseNumber )
 
 # 3 --------------------------------------------------------------------------------------
 
@@ -45,23 +45,29 @@ def sum_less_ints( x ):
 		
 		addOnNumber += 1
 		
-	return number
+	return str( number )
 
 # 4 --------------------------------------------------------------------------------------
 
 def factorial( x ):
 
-	addOnNumber = 1
-
-	number = 1
-
-	while addOnNumber <= x:
+	if x == 0:
 	
-		number = number * addOnNumber
-	 
-		addOnNumber += 1
+		multiplyNumber = 0
 	
-	return number
+	else:
+	
+		multiplyNumber = 1
+	
+		baseNumber = 2
+
+		while baseNumber <= x:
+	
+			multiplyNumber = multiplyNumber * baseNumber
+		
+			baseNumber += 1
+		
+	return str( multiplyNumber )
 	
 # 5 --------------------------------------------------------------------------------------
 
@@ -77,19 +83,28 @@ def is_factor( x, y ):
 
 # 6 --------------------------------------------------------------------------------------
 
-#def is_prime( x ):
+def is_prime( x ):
 
-#factor = 2
+	factor = 2
+	
+	loop = True
 
-#	if x >= 2:
+	while factor < x and loop == True:
+	
+		if x % factor == 0:
 		
-#		for x:
+			return "Composite"
 			
-#			if x % factor != 0:
+			loop = False
 			
-#				return "prime"
-				
-#				factor += 1
+		if x % factor != 0:
+		
+			factor += 1
+			
+	if loop == True:
+	
+		return "Prime"
+
 				
 
 # 7 --------------------------------------------------------------------------------------
@@ -110,23 +125,23 @@ def is_perfect( x ):
 			
 	if x == addNumber:
 		
-		return "True"
+		return "Perfect"
 			
 	else: 
 			
-		return "False"
+		return "Nonperfect"
 
 # 8 --------------------------------------------------------------------------------------
 
-def s:
+def is_sum_digits_factor( x ):
 
-	if x % add_digits( x ) == 0:
+	if x % int(add_digits( x )) == 0:
 
-		return "true"
+		return "True"
 
 	else:
 
-		return "false"
+		return "False"
 
 
 
