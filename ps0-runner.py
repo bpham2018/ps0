@@ -86,6 +86,10 @@ print( "Prime test with composite double digit number ( 30 )" )
 
 print( ps0.is_prime( 30 ) + "\n" )
 
+print( "Prime test with prime triple digit number ( 317 )" )
+
+print( ps0.is_prime( 317 ) + "\n" )
+
 # 7 test ---------------------------------------------------------------------------------
 
 print( "Perfect test with perfect single digit number ( 6 )" )
