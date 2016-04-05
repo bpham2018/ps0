@@ -6,11 +6,11 @@ def is_even( x ):
 
 		if x % 2 == 0: # if number can be divided evenly by 2, return "Even", else return "Odd"
 		
-			return "Even"	
-		
+			return True	# True for Even
+					
 		else:
 		
-			return "Odd"
+			return False # False for True
 		
 # 1 --------------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ def digit_number( x ):
 		
 	if x % 1 == 0 and x >= 0: # excludes negatives and floats
 		
-		return str( len( str( x ) ) ) # returns amount of digits in number
+		return len( str( x ) ) # returns amount of digits in number
 
 # 2 --------------------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ def add_digits( x ):
 	
 			baseNumber += int( digit )
 		
-		return str( baseNumber ) # returns as string so can attach a "\n" to it in runner program"
+		return baseNumber
 
 # 3 --------------------------------------------------------------------------------------
 
@@ -52,51 +52,48 @@ def sum_less_ints( x ):
 		
 			addOnNumber += 1
 		
-		return str( number ) # returns as string so can attach a "\n" to it in runner program"
-
+		return number
 # 4 --------------------------------------------------------------------------------------
 
 def factorial( x ):
 
 	if x % 1 == 0 and x >= 0: # excludes negatives and floats
 
-		if x == 0: # Factorial of 0 is 0
+		multiplyNumber = 1 
 	
-			multiplyNumber = 0
-	
-		else:
-	
-			multiplyNumber = 1 
-	
-			baseNumber = 2
+		baseNumber = 2
 
-			while baseNumber <= x: # only multiplying numbers up to and including the given"
+		while baseNumber <= x: # only multiplying numbers up to and including the given"
 	
-				multiplyNumber = multiplyNumber * baseNumber
+			multiplyNumber = multiplyNumber * baseNumber
 		
-				baseNumber += 1
+			baseNumber += 1
 		
-		return str( multiplyNumber ) # returns as string so can attach a "\n" to it in runner program
+		return multiplyNumber 
 	
 # 5 --------------------------------------------------------------------------------------
 
 def is_factor( x, y ):
 
-	if x % 1 == 0 and x >= 0 and y % 1 == 0 and y >= 0: # excludes negatives and floats
+	if x % 1 == 0 and x > 0 and y % 1 == 0 and y > 0: # excludes non-positive integers and floats
 	
 		if x % y == 0: # if the remainder of x divided by y is 0, then y is a factor of x
 	
-			return "True"
+			return True
 	
 		else:
 		
-			return "False"
+			return False
 
 # 6 --------------------------------------------------------------------------------------
 
 def is_prime( x ):
 
-	if x % 1 == 0: # excludes negatives and floats
+	if x == 2:
+	
+		return True
+		
+	if x % 1 == 0 and x > 2 : # excludes numbers below 3 and floats ( 2 taken care of above )
 
 		factor = 2
 	
@@ -107,7 +104,7 @@ def is_prime( x ):
 										    # or loop = False
 			if x % factor == 0:
 		
-				return "Composite"
+				return False # False if Composite
 			
 				loop = False # break the loops if finds one factor
 			
@@ -117,13 +114,13 @@ def is_prime( x ):
 			
 		if loop == True: # if finished loop without breaking it ( loop stays true ), then number is prime
 	
-			return "Prime"
+			return True # True if Prime
 
 # 7 --------------------------------------------------------------------------------------
 
 def is_perfect( x ):
 
-	if x % 1 == 0 and x >= 0: # excludes negatives and floats
+	if x % 1 == 0 and x > 0: # excludes non-positive integers and floats
 
 		number = 1
 	
@@ -139,24 +136,24 @@ def is_perfect( x ):
 			
 		if x == baseNumber: # if is equal to the sum of its factors, it is perfect
 		
-			return "Perfect"
+			return True # True if Perfect
 			
 		else: 
 			
-			return "Not Perfect"
+			return False # False if Not Perfect
 
 # 8 --------------------------------------------------------------------------------------
 
 def is_sum_digits_factor( x ):
 
-	if x % 1 == 0 and x >= 0: # excludes negatives and floats
+	if x % 1 == 0 and x > 0: # excludes non-positive integers and floats
 
 		if x % int(add_digits( x )) == 0: # calls in #2 function and does the operation in neat single-liner
 										  # if the remainder of x divided by the sum of it digits is 0,
 										  # then the sum of x's digits is a factor of x
 
-			return "True"
+			return True
 
 		else:
 
-			return "False"
+			return False
